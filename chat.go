@@ -3,12 +3,11 @@ package goTelegramBot
 import (
 	"bytes"
 	"encoding/json"
-	gtb "github.com/egorsobolev2000/goTelegramBot"
 	"net/http"
 )
 
-func SendMessage(update gtb.Update, replayText string, botUrl string) error {
-	var botMessage gtb.BotMessage
+func SendMessage(update Update, replayText string, botUrl string) error {
+	var botMessage BotMessage
 	botMessage.ChatId = update.Message.Chat.ChatId
 	botMessage.Text = replayText
 	buf, err := json.Marshal(botMessage)
