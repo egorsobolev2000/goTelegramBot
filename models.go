@@ -13,9 +13,19 @@ type BotCommand struct {
 }
 
 type Message struct {
-	Chat Chat						`json:"chat"`
-	Text string						`json:"text"`
-	UserInfo User					`json:"from"`
+	Chat Chat							`json:"chat"`
+	Text string							`json:"text"`
+	UserInfo User						`json:"from"`
+	CaptionEntities []MessageEntity		`json:"caption_entities"`
+}
+
+type MessageEntity struct {
+	Type string 					`json:"type"`
+	Offset int 						`json:"offset"`
+	Length int						`json:"length"`
+	Url string						`json:"url"`
+	UserInfo User 					`json:"user"`
+	Language string					`json:"language"`
 }
 
 type Chat struct {
