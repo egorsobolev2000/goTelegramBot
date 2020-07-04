@@ -54,20 +54,14 @@ type User struct {
 }
 
 type ReplyKeyboardMarkup struct {
-	Keyboard []KeyboardButton		`json:"keyboard"`
-	ResizeKeyboard bool				`json:"resize_keyboard"`
-	OneTimeKeyBoard bool			`json:"one_time_keyboard"`
-	Selective bool					`json:"selective"`
+	Keyboard        	[][]KeyboardButton		`json:"keyboard"`
+	ResizeKeyboard  	bool               		`json:"resize_keyboard"`   // optional
+	OneTimeKeyboard 	bool               		`json:"one_time_keyboard"` // optional
+	Selective       	bool               		`json:"selective"`         // optional
 }
 
 type KeyboardButton struct {
-	Text string							`json:"text"`
-	RequestContact bool					`json:"request_contact"`
-	RequestLocation bool				`json:"request_location"`
-	RequestPoll KeyboardButtonPollType	`json:"request_poll"`
+	Text            string `json:"text"`
+	RequestContact  bool   `json:"request_contact"`
+	RequestLocation bool   `json:"request_location"`
 }
-
-type KeyboardButtonPollType struct {
-	Type string 					`json:"type"`
-}
-
